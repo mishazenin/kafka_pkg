@@ -8,7 +8,6 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/prometheus/client_golang v1.13.0
 	github.com/rs/zerolog v1.28.0
-	gitlab.xbet.lan/web-backend/go/pkg/log v0.3.5
 )
 
 require (

@@ -8,7 +8,6 @@ import (
 
 	"github.com/Shopify/sarama"
 	"github.com/google/uuid"
-	"gitlab.xbet.lan/web-backend/go/pkg/log"
 	"kafka/consumer"
 	"kafka/producer"
 )
@@ -105,7 +104,7 @@ func main() {
 		consumer.ReadSince(time.Now().AddDate(0, 0, -1)),
 		consumer.KeepOffset(false),
 		consumer.Context(context.Background()),
-		consumer.LoggerSet(log.NewLogger()),
+		consumer.LoggerSet(nil),
 		consumer.Client(cl),
 		consumer.Topics([]string{"producer-category-table-testing"}),
 		consumer.Group("test"),
