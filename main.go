@@ -32,7 +32,6 @@ func (e Event) Time() int64 {
 }
 
 // Converting function
-// generic type
 func msgToEvent(msg *sarama.ConsumerMessage) (consumer.KafkaMsg, error) {
 	var (
 		message Event   // struct that's needed to be returned
@@ -63,12 +62,7 @@ func main() {
 		KafkaOffSet:    0,
 		KafkaPartition: 0,
 	}
-	// toKafka := struct {
-	// 	ID        int    `json:"id"`
-	// 	URL       string `json:"url"`
-	// 	ProductID int    `json:"product_id"`
-	// 	Time      int64
-	// }{90, "http://google.com/image6.jpg", 47, time.Now().AddDate(0, 0, -5).Unix()}
+
 
 	p, err := producer.NewKafkaProducer(
 		[]string{"localhost:9092"},
